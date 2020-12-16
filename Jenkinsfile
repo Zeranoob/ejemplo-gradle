@@ -11,8 +11,8 @@ pipeline {
 					}
 
 					stage('Sonar'){
-						def scannerHome = tool name:'sonar_scanner'
-						withSonarQubeEnv('Sonar') {
+						def scannerHome = tool 'sonar_scanner';
+						 withSonarQubeEnv(installationName: 'Sonar') {
 						sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
 					}
 
