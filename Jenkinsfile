@@ -7,7 +7,7 @@ pipeline {
 				script {
 
 					stage('Build & Test') {
-					sh "./gradlew clean build" 
+					sh "./gradle clean build" 
 					}
 
 					stage('Sonar'){
@@ -17,7 +17,7 @@ pipeline {
 					}
 
 					stage('Run'){
-						sh "nohup ./gradlew bootRun &"
+						sh "nohup ./gradle bootRun &"
 						sleep 20
 					}
 
