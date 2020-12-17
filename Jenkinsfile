@@ -11,6 +11,8 @@ pipeline {
 					params.herramienta // -> gradle o maven
 
 					def ejecucion = (params.herramienta == 'gradle') ? "${load 'gradle.groovy'}" : "${load 'maven.groovy'}"
+					
+					ejecucion.call()
 
 				}
 			}
