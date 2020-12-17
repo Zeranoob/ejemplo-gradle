@@ -11,9 +11,8 @@ pipeline {
 					}
 
 					stage('Sonar'){
-						def scannerHome = tool 'sonar_scanner';
 						 withSonarQubeEnv(installationName: 'Sonar') {
-							sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
+							sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
 						}
 					}
 
