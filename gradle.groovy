@@ -1,4 +1,4 @@
-def call(){
+def ejecucion(){
 
 	stage('Build & Test'){
 		sh "gradle clean build"

@@ -42,3 +42,4 @@ Caused by: java.io.IOException: Descriptor de archivo erróneo
 2020-12-14 21:13:03.814  INFO 410 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-12-14 21:13:03.820  INFO 410 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
 2020-12-14 21:13:03.840  INFO 410 --- [nio-8081-exec-1] devops.subnivel.Control                  : Proceso exitoso de prueba
+2020-12-14 22:12:58.230  INFO 410 --- [nio-8081-exec-5] devops.subnivel.Control                  : Proceso exitoso de prueba
