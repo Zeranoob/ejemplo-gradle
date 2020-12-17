@@ -12,7 +12,7 @@ pipeline {
 
 					if(params.herramienta == 'gradle'){
 						//invocacion a gradle.groovy
-					} else{
+					} else(params.herramienta == 'maven'){
 						//invocacion a maven.groovy
 					}
 
