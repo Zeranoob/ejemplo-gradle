@@ -1,7 +1,7 @@
 pipeline {
 	agent any 
 
-	parameters { choice(name: 'herramienta', choices: ['gradle','maven'], description: '') }
+	parameters { choice(name: 'herramienta', choices: ['gradle','maven'], description: 'Elección de herramienta de construcción para aplicación covid') }
 
 	stages {
 		stage('Pipelines') {
@@ -17,6 +17,12 @@ pipeline {
                         def ejecucion = load 'maven.groovy'
                         ejecucion.call()
                     }
+					post {
+		success {
+			slackSend color: 'good', message: "Diego Perez][Pipeline-maven-gradle][${params.herramienta}] Ejecución exitosa."
+		}
+		failure {
+			slackSend color: 'danger', message: "[Diego Perez][Pipeline-maven-gradle][${params.herramienta}] Ejecución fallida en stage ${TAREA}."
 				}
 			}
 		}
