@@ -19,10 +19,10 @@ pipeline {
                     }
 					post {
 		success {
-			slackSend color: 'good', message: "Diego Perez][Pipeline-maven-gradle][${params.herramienta}] Ejecución exitosa."
+			slackSend teamDomain: 'devops-usach-2020', tokenCredentialId: 'slack-token' color: 'good', message: "Diego Perez][Pipeline-maven-gradle][${params.herramienta}] Ejecución exitosa."
 		}
 		failure {
-			slackSend color: 'danger', message: "[Diego Perez][Pipeline-maven-gradle][${params.herramienta}] Ejecución fallida en stage ${TAREA}."
+			slackSend teamDomain: 'devops-usach-2020', tokenCredentialId: 'slack-token' color: 'danger', message: "[Diego Perez][Pipeline-maven-gradle][${params.herramienta}] Ejecución fallida en stage ${TAREA}."
 				}
 			}
 		}
