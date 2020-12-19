@@ -1,6 +1,6 @@
 pipeline {
         agent any
-        parameters { choice(name: 'herramienta', choices: ['gradle','maven'], description: ('Elección de herramienta de construcción para aplicación covid') }
+        parameters { choice(name: 'herramienta', choices: ['gradle','maven'], description: 'Elección de herramienta de construcción para aplicación covid') }
         stages {
                 stage('Pipelines') {
                         steps {
